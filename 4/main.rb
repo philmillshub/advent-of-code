@@ -1,5 +1,5 @@
 valid = 0
-input = File.open("../input/password_policy.txt").readlines.each do |i|
+File.open("../input/password_policy.txt").readlines.each do |i|
   colon = i.index(':')
   policy = i[0..colon-1]
   password = i[colon+2..-1].strip
