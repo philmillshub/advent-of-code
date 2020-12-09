@@ -1,4 +1,4 @@
-input = File.open("../input/expense_report.txt").readlines.map{|i| i.to_i}
+input = File.open("input.txt").readlines.map{|i| i.to_i}
 for i in 0..(input.count-1)
   for j in (i+1)..(input.count-1)
     sum = input[i] + input[j]

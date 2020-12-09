@@ -1,5 +1,5 @@
 valid = 0
-File.open("../input/password_policy.txt").readlines.each do |i|
+File.open("input.txt").readlines.each do |i|
   colon = i.index(':')
   policy = i[0..colon-1]
   password = i[colon+2..-1].strip
@@ -11,8 +11,10 @@ File.open("../input/password_policy.txt").readlines.each do |i|
 
   check = policy[-1]
 
-  count = password.count(check)
-  if count >= low && count <= high
+  lowCheck = password[low-1]
+  highCheck = password[high-1]
+
+  if (lowCheck === check && highCheck != check) || (lowCheck != check && highCheck === check)
     valid = valid + 1
   end
 end

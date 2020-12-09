@@ -1,4 +1,4 @@
-rows = File.open("../input/passport_data.txt").readlines.map{|i| i.strip}
+rows = File.open("input.txt").readlines.map{|i| i.strip}
 passports = []
 passport = {}
 

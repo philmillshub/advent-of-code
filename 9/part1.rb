@@ -1,4 +1,4 @@
-rows = File.open("../input/xmas.txt").readlines.map{|i| i.strip.to_i }
+rows = File.open("input.txt").readlines.map{|i| i.strip.to_i }
 for i in 25..rows.count-1
   found = false
   for j in i-25..i-2
