@@ -1,4 +1,4 @@
-rows = File.open("../input/luggage.txt").readlines.map{|i| i.strip}
+rows = File.open("input.txt").readlines.map{|i| i.strip}
 regex = /(.+) bags contain ((\d|no) .+ bags?)./
 
 rules = []

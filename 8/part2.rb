@@ -1,4 +1,4 @@
-@rows = File.open("../input/game_instructions.txt").readlines.map{|i| { cmd: i.strip.split(' ').first, cnt: i.strip.split(' ').last.to_i }}
+@rows = File.open("input.txt").readlines.map{|i| { cmd: i.strip.split(' ').first, cnt: i.strip.split(' ').last.to_i }}
 acc = 0
 line = 0
 prevLines = []

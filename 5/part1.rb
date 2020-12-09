@@ -1,9 +1,6 @@
-rows = File.open("../input/boarding_passes.txt").readlines.map{|i| i.strip}
+rows = File.open("input.txt").readlines.map{|i| i.strip}
 seats = []
-notFound = []
-for i in 0..(128*8-1)
-  notFound.push i
-end
+maxID = 0
 rows.each do |r|
   seat = { pass: r, row: nil, column: nil }
   lower = 0
@@ -34,12 +31,8 @@ rows.each do |r|
   end
   if seat[:row] && seat[:column]
     seat[:id] = (seat[:row] * 8) + seat[:column]
-    notFound.delete seat[:id]
+    maxID = seat[:id] if seat[:id] > maxID
   end
   seats.push seat
 end
-for i in 1..notFound.count-2
-  if (notFound[i-1] + 1) != notFound[i] && (notFound[i+1] - 1) != notFound[i]
-    puts notFound[i]
-  end
-end
+puts maxID

@@ -1,4 +1,4 @@
-input = File.open("../input/trees_map.txt").readlines.map{|i| i.strip}
+input = File.open("input.txt").readlines.map{|i| i.strip}
 rows = input.count
 columns = input[0].length
 y = 0

@@ -1,4 +1,4 @@
-rows = File.open("../input/customs.txt").readlines.map{|i| i.strip}
+rows = File.open("input.txt").readlines.map{|i| i.strip}
 answers = []
 answer = []
 

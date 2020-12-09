@@ -1,4 +1,4 @@
-rows = File.open("../input/game_instructions.txt").readlines.map{|i| i.strip}
+rows = File.open("input.txt").readlines.map{|i| i.strip}
 acc = 0
 line = 0
 prevLines = []
