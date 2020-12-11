@@ -4,7 +4,6 @@
 @rows.append(@rows.max+3)
 
 @paths = {}
-@globalInput = []
 
 def pather(lastPick = 0, lastIdx = -1, path = [])
   return @paths[lastPick] unless @paths[lastPick].nil?
