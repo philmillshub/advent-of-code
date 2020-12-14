@@ -1,0 +1,1 @@
+rows = File.open("input.txt").readlines.map{|i| i.strip }
