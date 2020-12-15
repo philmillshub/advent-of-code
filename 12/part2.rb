@@ -1,5 +1,4 @@
 rows = File.open("input.txt").readlines.map{|i| { command: i.strip[0], units: i.strip[1..-1].to_i }}
-heading = 0
 position = { east: 0, north: 0 }
 waypoint = { east: 10, north: 1 }
 
@@ -22,6 +21,10 @@ for i in 0..rows.count-1
       waypoint = { east: (waypoint[:east] * -1), north: (waypoint[:north] * -1)}
     when 3
       waypoint = { east: waypoint[:north], north: (waypoint[:east] * -1) }
+    else
+      puts "ALERT: BAD ANGLE: #{rows[i][:units]}"
+      puts "LAST COMMAND: #{rows[i]}"
+      break  
     end
   when 'R'
     clicks = rows[i][:units] / 90
@@ -32,6 +35,10 @@ for i in 0..rows.count-1
       waypoint = { east: (waypoint[:east] * -1), north: (waypoint[:north] * -1)}
     when 3
       waypoint = { east: (waypoint[:north] * -1), north: waypoint[:east] }
+    else
+      puts "ALERT: BAD ANGLE: #{rows[i][:units]}"
+      puts "LAST COMMAND: #{rows[i]}"
+      break  
     end
   when 'F'
     position[:east] += rows[i][:units] * waypoint[:east]

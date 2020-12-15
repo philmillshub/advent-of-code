@@ -32,7 +32,7 @@ for i in 0..rows.count-1
   end
   if ![0, 90, 180, 270].include?(heading) # just some error handling :)
     puts "ALERT: BAD ANGLE: #{heading}"
-    last "LAST COMMAND: #{rows[i]}"
+    puts "LAST COMMAND: #{rows[i]}"
     break
   end
 end
