@@ -30,7 +30,7 @@ for i in 0..rows.count-1
       position[:north] -= rows[i][:units]
     end
   end
-  if ![0, 90, 180, 270].include?(heading)
+  if ![0, 90, 180, 270].include?(heading) # just some error handling :)
     puts "ALERT: BAD ANGLE: #{heading}"
     last "LAST COMMAND: #{rows[i]}"
     break
