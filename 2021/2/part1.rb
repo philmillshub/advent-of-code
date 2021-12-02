@@ -1,17 +1,19 @@
-input = File.open("input.txt").readlines.map{|i| i}
+input = File.open("input.txt").readlines.map do |i|
+  instr = i.split(' ')
+  [instr[0], instr[1].to_i]
+end
 
 pos = 0
 depth = 0
 
 for i in 0..(input.count-1)
-  instr = input[i].split(' ')
-  case instr[0]
+  case input[i][0]
   when "forward"
-    pos += instr[1].to_i
+    pos += input[i][1]
   when "down"
-    depth += instr[1].to_i
+    depth += input[i][1]
   when "up"
-    depth -= instr[1].to_i
+    depth -= input[i][1]
   end
 end
 
