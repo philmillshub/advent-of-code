@@ -7,15 +7,15 @@ pos = 0
 depth = 0
 aim = 0
 
-for i in 0..(input.count-1)
-  case input[i][0]
+input.each do |i|
+  case i[0]
   when "forward"
-    pos += input[i][1]
-    depth += aim * input[i][1]
+    pos += i[1]
+    depth += aim * i[1]
   when "down"
-    aim += input[i][1]
+    aim += i[1]
   when "up"
-    aim -= input[i][1]
+    aim -= i[1]
   end
 end
 
