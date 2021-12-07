@@ -6,9 +6,8 @@ for u in (input.min)..(input.max)
   localFuel = 0
   input.each do |v|
     if u != v
-      for s in 1..(u-v).abs()
-        localFuel += s
-      end
+      n = (u-v).abs()
+      localFuel += n * (n+1) / 2
     end
   end
 
