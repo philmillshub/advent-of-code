@@ -60,14 +60,3 @@ lastCard.each do |row|
 end
 
 puts sum * lastCardDetails[:call]
-#winningCardDetails = cardRun(numbers, cards)
-#winningCard = cards[winningCardDetails[:cardID]]
-
-#sum = 0
-#winningCard.each do |row|
-#  row.each do |square|
-#    sum += square[:value] unless square[:marked]
-#  end
-#end
-
-#puts sum * winningCardDetails[:lastCall]
