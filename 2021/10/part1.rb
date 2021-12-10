@@ -8,7 +8,7 @@ for i in 0..3
 end
 
 illegalChars = []
-input.each.with_index do |row, rowId|
+input.each do |row|
   openerStack = []
   row.each do |val|
     openerStack.push(val) if openers.include? val
